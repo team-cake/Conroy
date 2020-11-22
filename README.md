@@ -25,7 +25,10 @@ This project showcases the use of DialogFlow, Express, TypeScript and React. :mo
 
 ## Images :camera:
 
-Images will follow once we have something to show!
+Flowchart  
+![Flowchart](https://raw.githubusercontent.com/team-cake/Conroy/readme/images/Conroy.jpg)
+
+More images will follow once we have something to show!
 
 ---
 
