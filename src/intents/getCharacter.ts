@@ -11,7 +11,7 @@ In the end I chose to keep it simple so it will work.
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 export const getCharacter = async (agent: any) => {
-	const name: string | undefined = agent.parameters['name'];
+	const name: string | undefined = agent.parameters['sys.person'];
 
 	// Safetycheck on parameter
 	if (!name)
@@ -22,7 +22,7 @@ export const getCharacter = async (agent: any) => {
 
 async function character(agent: any): Promise<void> {
 	// Get the name parameter to make us of in the CHARACTER_ENDPOINT
-	const name: string = agent.parameters!['name'];
+	const name: string = agent.parameters!['sys.person'];
 
 	const CHARACTER_ENDPOINT = `https://rickandmortyapi.com/api/character/?name=${name}`;
 
