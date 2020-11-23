@@ -8,7 +8,7 @@ import { fallback } from './intents/fallback';
 import { welcome } from './intents/welcome';
 import { getCharacter } from './intents/getCharacter';
 // import { getEpisode } from './intents/getEpisode'
-// import { getLocation } from './intents/getLocation';
+import { getLocation } from './intents/getLocation';
 
 const app = express();
 
@@ -23,8 +23,8 @@ const intents = new Map<string, (agent: any) => void>();
 intents.set('Default Fallback Intent', fallback);
 intents.set('Default Welcome Intent', welcome);
 intents.set('getCharacter', getCharacter);
-// intents.set('Episode', getEpisode);
-// intents.set('Location', getLocation);
+// intents.set('getEpisode', getEpisode);
+intents.set('getLocation', getLocation);
 
 app.post('/', async (req, res) => {
 	const agent: any = new WebhookClient({ request: req, response: res });
