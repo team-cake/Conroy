@@ -31,13 +31,23 @@ async function location(agent: any): Promise<void> {
 		.then((result: AxiosResponse<any>) => {
 			// Getting the data I need for the output to user
 			console.log(result.data.results);
+			const name: string = result.data.results[0].name;
+			const type: string = result.data.results[0].type;
+			const dimension: string = result.data.results[0].dimension;
+
 			// Textresponses and the data output for the enduser
 			const textResponse1: string = 'Location identified.';
 			const locationFound: string = `This is what I could find about ${locationInput}:`;
+			const informationFound: string = `Full location name: ${name}, type: ${type}, dimension: ${dimension}.`;
 			const textResponse2: string = 'Anything else I can help you with?';
 
 			// Return successfull response
-			return agent.add([textResponse1, locationFound, textResponse2]);
+			return agent.add([
+				textResponse1,
+				locationFound,
+				informationFound,
+				textResponse2,
+			]);
 		})
 		.catch((err: AxiosError<any>) => {
 			// In case of error or misunderstanding
