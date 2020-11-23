@@ -22,7 +22,7 @@ const intents = new Map<string, (agent: any) => void>();
 // Set specific intent-name to it's respective method
 intents.set('Default Fallback Intent', fallback);
 intents.set('Default Welcome Intent', welcome);
-intents.set('Character', getCharacter);
+intents.set('getCharacter', getCharacter);
 // intents.set('Episode', getEpisode);
 // intents.set('Location', getLocation);
 
