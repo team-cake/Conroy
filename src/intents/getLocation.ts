@@ -30,7 +30,7 @@ async function location(agent: any): Promise<void> {
 		.get(LOCATION_ENDPOINT)
 		.then((result: AxiosResponse<any>) => {
 			// Getting the data I need for the output to user
-
+			console.log(result.data.results);
 			// Textresponses and the data output for the enduser
 			const textResponse1: string = 'Location identified.';
 			const locationFound: string = `This is what I could find about ${locationInput}:`;
