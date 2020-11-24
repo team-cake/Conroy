@@ -23,6 +23,7 @@ export const getCharacter = async (agent: any) => {
 async function character(agent: any): Promise<void> {
 	// Get the name parameter to make us of in the CHARACTER_ENDPOINT
 	const name: string = agent.parameters!['name'];
+	console.log('name', name);
 
 	const CHARACTER_ENDPOINT = `https://rickandmortyapi.com/api/character/?name=${name}`;
 
@@ -30,12 +31,12 @@ async function character(agent: any): Promise<void> {
 		.get(CHARACTER_ENDPOINT)
 		.then((result: AxiosResponse<any>) => {
 			// Getting the data I need for the output to user
-			const image: string = result.data.results[2].image;
+			const image: string = result.data.results[0].image;
 			const status: string = result.data.results[0].status;
 			const species: string = result.data.results[0].species;
 			const gender: string = result.data.results[0].gender;
 			const origin: string = result.data.results[0].origin.name;
-			const location: string = result.data.results[1].location.name;
+			const location: string = result.data.results[0].location.name;
 
 			// Textresponses and the data output for the enduser
 			const textResponse1: string = 'Target identified.';
