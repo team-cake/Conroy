@@ -9,6 +9,7 @@ import { welcome } from './intents/welcome';
 import { getCharacter } from './intents/getCharacter';
 // import { getEpisode } from './intents/getEpisode'
 import { getLocation } from './intents/getLocation';
+import { getBurp } from './intents/getBurp';
 
 const app = express();
 
@@ -25,6 +26,7 @@ intents.set('Default Welcome Intent', welcome);
 intents.set('getCharacter', getCharacter);
 // intents.set('getEpisode', getEpisode);
 intents.set('getLocation', getLocation);
+intents.set('getBurp', getBurp);
 
 app.post('/', async (req, res) => {
 	const agent: any = new WebhookClient({ request: req, response: res });
