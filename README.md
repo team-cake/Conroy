@@ -36,10 +36,10 @@ More images will follow once we have something to show!
 
 My planning is the following:  
 [:heavy_check_mark:] - Start the project  
-[ ] - Make flowchart and write out intents  
-[ ] - Create general styling for the front end client  
-[ ] - Set up initial DialogFlow structure and intents  
+[:heavy_check_mark:] - Make flowchart and write out intents  
+[:heavy_check_mark:] - Set up initial DialogFlow structure and intents  
 [ ] - Implement intents in the server and connect api  
+[ ] - Create general styling for the front end client  
 [ ] - Create a front end client with React  
 [ ] - Connect front end client with DialogFlow  
 [ ] - Make sure everything works  
@@ -61,7 +61,7 @@ Project mode is created with:
 ## Project Status :chart_with_upwards_trend:
 
 Project is: _in progress_  
-Just started the project!
+At the moment I'm implementing the intents with the server and connecting the API.
 
 ---
 
