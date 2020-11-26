@@ -38,7 +38,7 @@ My planning is the following:
 [:heavy_check_mark:] - Start the project  
 [:heavy_check_mark:] - Make flowchart and write out intents  
 [:heavy_check_mark:] - Set up initial DialogFlow structure and intents  
-[ ] - Implement intents in the server and connect api  
+[:heavy_check_mark:] - Implement intents in the server and connect api  
 [ ] - Create general styling for the front end client  
 [ ] - Create a front end client with React  
 [ ] - Connect front end client with DialogFlow  
