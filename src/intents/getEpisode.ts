@@ -7,3 +7,52 @@ don't forget to use .catch(err)
 Tried to use different API, didn't work that well for me with the dates. 
 In the end I chose to keep it simple so it will work.
 */
+
+import axios, { AxiosError, AxiosResponse } from 'axios';
+
+export const getEpisode = async (agent: any) => {
+	const episodeName: string | undefined = agent.parameters['episodeName'];
+
+	// Safetycheck on parameter
+	if (!episodeName)
+		return agent.add(["I think I'm missing a name. Could you double check?"]);
+
+	return await episode(agent);
+};
+
+async function episode(agent: any): Promise<void> {
+	// Get the name parameter to make us of in the CHARACTER_ENDPOINT
+	const episodeName: string = agent.parameters!['episodeName'];
+	console.log('name', episodeName);
+
+	const EPISODE_ENDPOINT = `https://rickandmortyapi.com/api/episode/${episodeName}`;
+
+	await axios
+		.get(EPISODE_ENDPOINT)
+		.then((result: AxiosResponse<any>) => {
+			// Getting the data I need for the output to user
+			console.log('result', result);
+			// const image: string = result.data.results[0].image;
+
+			// Textresponses and the data output for the enduser
+			const textResponse1: string = 'Target identified.';
+			const nameFound: string = `This is what I could find about ${episodeName}:`;
+			// const imageFound: string = `${image}`;
+			// const informationFound: string = `Status: ${status} - Species: ${species} - Gender: ${gender} - Origin: ${origin} - Current location: ${location}`;
+			const textResponse2: string = 'Anything else I can help you with?';
+
+			// Return successfull response
+			return agent.add([
+				textResponse1,
+				nameFound,
+				// imageFound,
+				// informationFound,
+				textResponse2,
+			]);
+		})
+		.catch((err: AxiosError<any>) => {
+			// In case of error or misunderstanding
+			console.log(err);
+			return agent.add('Input of episode name incorrect. Please try again.');
+		});
+}
