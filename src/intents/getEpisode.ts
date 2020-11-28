@@ -32,21 +32,21 @@ async function episode(agent: any): Promise<void> {
 		.then((result: AxiosResponse<any>) => {
 			// Getting the data I need for the output to user
 			console.log('result', result);
-			// const image: string = result.data.results[0].image;
+			const air_date: string = result.data.results.air_date;
+			const episode: string = result.data.results.episode;
+			const characters: string[] = result.data.results.characters;
 
 			// Textresponses and the data output for the enduser
 			const textResponse1: string = 'Target identified.';
 			const nameFound: string = `This is what I could find about ${episodeName}:`;
-			// const imageFound: string = `${image}`;
-			// const informationFound: string = `Status: ${status} - Species: ${species} - Gender: ${gender} - Origin: ${origin} - Current location: ${location}`;
+			const informationFound: string = `Air date: ${air_date} - Episode #: ${episode} - Characters: ${characters}`;
 			const textResponse2: string = 'Anything else I can help you with?';
 
 			// Return successfull response
 			return agent.add([
 				textResponse1,
 				nameFound,
-				// imageFound,
-				// informationFound,
+				informationFound,
 				textResponse2,
 			]);
 		})
