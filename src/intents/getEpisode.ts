@@ -25,7 +25,7 @@ async function episode(agent: any): Promise<void> {
 	const episodeName: string = agent.parameters!['episodeName'];
 	console.log('name', episodeName);
 
-	const EPISODE_ENDPOINT = `https://rickandmortyapi.com/api/episode/${episodeName}`;
+	const EPISODE_ENDPOINT = `https://rickandmortyapi.com/api/episode/?name=${episodeName}`;
 
 	await axios
 		.get(EPISODE_ENDPOINT)
