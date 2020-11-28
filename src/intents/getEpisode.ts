@@ -37,7 +37,7 @@ async function episode(agent: any): Promise<void> {
 			const characters: string[] = result.data.results.characters;
 
 			// Textresponses and the data output for the enduser
-			const textResponse1: string = 'Target identified.';
+			const textResponse1: string = 'Episode identified.';
 			const nameFound: string = `This is what I could find about episode ${episodeName}:`;
 			const informationFound: string = `Air date: ${air_date} - Episode #: ${episode} - Characters: ${characters}`;
 			const textResponse2: string = 'Anything else I can help you with?';
