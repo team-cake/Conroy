@@ -37,7 +37,7 @@ async function location(agent: any): Promise<void> {
 
 			// Textresponses and the data output for the enduser
 			const textResponse1: string = 'Location identified.';
-			const locationFound: string = `This is what I could find about ${locationInput}:`;
+			const locationFound: string = `This is what I could find about location: ${locationInput}:`;
 			const informationFound: string = `Full location name: ${name}, type: ${type}, dimension: ${dimension}.`;
 			const textResponse2: string = 'Anything else I can help you with?';
 
