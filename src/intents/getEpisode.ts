@@ -15,13 +15,15 @@ export const getEpisode = async (agent: any) => {
 
 	// Safetycheck on parameter
 	if (!episodeName)
-		return agent.add(["I think I'm missing a name. Could you double check?"]);
+		return agent.add([
+			"I think I'm missing an episode name. Could you double check?",
+		]);
 
 	return await episode(agent);
 };
 
 async function episode(agent: any): Promise<void> {
-	// Get the name parameter to make us of in the CHARACTER_ENDPOINT
+	// Get the name parameter to make us of in the EPISODE_ENDPOINT
 	const episodeName: string = agent.parameters!['episodeName'];
 	console.log('name', episodeName);
 
