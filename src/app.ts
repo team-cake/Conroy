@@ -7,7 +7,7 @@ import { WebhookClient } from 'dialogflow-fulfillment';
 import { fallback } from './intents/fallback';
 import { welcome } from './intents/welcome';
 import { getCharacter } from './intents/getCharacter';
-// import { getEpisode } from './intents/getEpisode'
+import { getEpisode } from './intents/getEpisode';
 import { getLocation } from './intents/getLocation';
 import { getBurp } from './intents/getBurp';
 
@@ -24,7 +24,7 @@ const intents = new Map<string, (agent: any) => void>();
 intents.set('Default Fallback Intent', fallback);
 intents.set('Default Welcome Intent', welcome);
 intents.set('getCharacter', getCharacter);
-// intents.set('getEpisode', getEpisode);
+intents.set('getEpisode', getEpisode);
 intents.set('getLocation', getLocation);
 intents.set('getBurp', getBurp);
 
